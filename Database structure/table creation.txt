@@ -1,0 +1,63 @@
+CREATE DATABASE move_smart;
+
+USE move_smart;
+
+CREATE TABLE hubs (
+    service_center VARCHAR(50) NOT NULL PRIMARY KEY,
+    hub_name VARCHAR(255) NOT NULL,
+    region VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE routes (
+    service_center VARCHAR(50) NOT NULL,
+    route_number BIGINT NOT NULL PRIMARY KEY,
+    license_plate VARCHAR(10),
+    driver_name VARCHAR(255),
+    worker_type VARCHAR(255),
+    route_percent FLOAT,
+    delivered_packages INT,
+    pending_delivery_packages INT,
+    delivery_failure_packages INT,
+    route_status VARCHAR(255),
+    route_observation VARCHAR(255),
+    route_date DATE,
+    hourOnDeliveryZone VARCHAR(10),
+    hourToDeliveryArea VARCHAR(10),
+    onRouteHour VARCHAR(10),
+    service_type VARCHAR(255),
+    stops_number INT,
+    points_number INT,
+    individual_packages_number INT,
+    individual_bags_number INT,
+    delivered_percent DECIMAL(5, 2),
+    delivery_failure_percent DECIMAL(5, 2),
+    pending_percent DECIMAL(5, 2),
+    receive_packages INT,
+    transferred_packages INT,
+    out_of_area_delivery INT,
+    routes_claim INT,
+    last_update DATETIME,
+    FOREIGN KEY(service_center) REFERENCES hubs(service_center)
+);
+
+CREATE TABLE stopeds (
+    route_number BIGINT NOT NULL,
+    stoped_address VARCHAR(255) NOT NULL,
+    stoped_points INT,
+    stoped_packages INT,
+    stoped_number INT
+);
+
+CREATE TABLE points (
+    route_number BIGINT NOT NULL,
+    order_letter VARCHAR(2),
+    order_address VARCHAR(255),
+    order_address_type VARCHAR(20)
+);
+
+CREATE TABLE packages (
+    route_number BIGINT NOT NULL,
+    package_number BIGINT,
+    package_address VARCHAR(255),
+    package_status VARCHAR(50)
+);

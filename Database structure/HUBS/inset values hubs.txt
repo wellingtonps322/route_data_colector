@@ -1,0 +1,34 @@
+SELECT * FROM move_smart.hubs;
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SC_ZS', 'ZONA SUL', 'SPCM');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP5', 'ARENA BARUERI', 'SPC');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP7', 'ZONA OESTE', 'SPC');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP10', 'ARAÇATUBA', 'SPISIL');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP12', 'SÃO JOSÉ DO RIO PRETO', 'SPISUL');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP17', 'SÃO BERNARDO DO CAMPO', 'MEGAS UTR');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP21', 'MOOCA', 'SPC');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP25', 'ATIBAIA', 'SPC');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP30', 'GUARULHOS', 'MEGAS UTR');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP33', 'VOLUMOSO MEGA GUARULHOS', 'MEGAS UTR');
+
+INSERT INTO hubs (service_center, hub_name, region)
+VALUES('SSP43', 'VOLUMOSO MEGA ARENA', 'SPC');
